@@ -1,8 +1,8 @@
-var express = require('express')
-var http = require('http')
-var app = express()
-var server = http.createServer(app)
-var io = require('socket.io').listen(server);
+let express = require('express')
+let http = require('http')
+let app = express()
+let server = http.createServer(app)
+let io = require('socket.io').listen(server);
 
 app.use(express.static(__dirname))
 
