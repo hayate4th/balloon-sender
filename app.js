@@ -1,5 +1,7 @@
 let express = require('express')
 let http = require('http')
+let escape = require('escape-html')
+let Filter = require('bad-words')
 let app = express()
 let server = http.createServer(app)
 let io = require('socket.io').listen(server);
@@ -8,10 +10,12 @@ let admins = {
     'admin': { password: 'Kb893veM' }
 };
 
+filter = new Filter()
+
 app.use(express.static(__dirname))
 
-server.listen(process.env.PORT);
-// server.listen(5000);
+// server.listen(process.env.PORT);
+server.listen(5000);
 
 app.get('/', (req, res)=> {
     var user = auth(req);
@@ -30,7 +34,7 @@ io.sockets.on('connection', (socket)=>{
     socket.on('message', (data)=>{
         io.sockets.emit("message",
         {
-            msg: data.message
+            msg: filter.clean(escape(data.message))
         })
     })
 })

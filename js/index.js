@@ -20,8 +20,9 @@ var addMessage = function(msg){
 
 var makeMessage = function(msg){
     if (msg.length > 0) {
-        rnd_top = 25 - Math.floor( Math.random () * 25) ;
-        rnd_left = 80 - Math.floor( Math.random () * 60) ;
+        console.log(msg)
+        rnd_top = 25 - Math.floor( Math.random () * 25);
+        rnd_left = 80 - Math.floor( Math.random () * 60);
         return "<div style='text-align: right'><div class='my-msg' style='top: " + rnd_top.toString() + "%'><span class='message'>" + msg + "</span></div><div class='my-msg-tree' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div></div></br>"
     }
 }
