@@ -6,7 +6,7 @@ let io = require('socket.io').listen(server);
 
 app.use(express.static(__dirname))
 
-server.listen(5000);
+server.listen(process.env.PORT);
 
 app.get('/', (req, res)=> {
     res.sendFile(__dirname + '/views/index.html');
