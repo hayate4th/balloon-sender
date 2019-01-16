@@ -1,28 +1,25 @@
 var socket = io()
 
 socket.on('message', function(data){
-    addMessage(data.msg, data.name)
+    addMessage(data.msg)
 })
 
 var sendMessage = function(){
     var msg = $('input#msg-input').val()
-    var name = $('input#user-name-input').val()
     socket.emit('message',
     {
-        message: msg,
-        name: name
+        message: msg
     })
     $('input#msg-input').val('')
 }
 
-var addMessage = function(msg, username){
+var addMessage = function(msg){
     var msgWhole = $('div#msg-whole')
-    msgWhole.prepend(makeMessage(msg, username))
+    msgWhole.prepend(makeMessage(msg))
 }
 
-var makeMessage = function(msg, username){
-    if(username===$('input#user-name-input').val())
-        return "<div style='text-align: right'><div class='my-msg'><span class='user-name'>" + username + ":</span><span class='message'>" + msg + "</span></div></div></br>"
-    else
-        return "<div style='text-align: left'><div class='other-msg'><span class='user-name'>" + username + ":</span><span class='message'>" + msg + "</span></div></div></br>"
+var makeMessage = function(msg){
+    rnd_top = 25 - Math.floor( Math.random () * 25) ;
+    rnd_left = 80 - Math.floor( Math.random () * 60) ;
+    return "<div style='text-align: right'><div class='my-msg' style='top: " + rnd_top.toString() + "%'><span class='message'>" + msg + "</span></div><div class='my-msg-tree' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div></div></br>"
 }

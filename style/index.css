@@ -1,3 +1,70 @@
+@-webkit-keyframes floatingBalloon {
+  0% {
+    display: block;
+    left: 100%;
+  }
+  100% {
+    display: none;
+    left: -50%;
+  }
+}
+@-moz-keyframes floatingBalloon {
+  0% {
+    display: block;
+    left: 100%;
+  }
+  100% {
+    display: none;
+    left: -50%;
+  }
+}
+@keyframes floatingBalloon {
+  0% {
+    display: block;
+    left: 100%;
+  }
+  100% {
+    display: none;
+    left: -50%;
+  }
+}
+@-webkit-keyframes showingBalloon {
+  0% {
+    transform: scale(0, 0);
+  }
+  80% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@-moz-keyframes showingBalloon {
+  0% {
+    transform: scale(0, 0);
+  }
+  80% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes showingBalloon {
+  0% {
+    transform: scale(0, 0);
+  }
+  80% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+html.tree, body.tree {
+  background: #ee7f00;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -46,79 +113,53 @@ html button#msg-btn:focus, body button#msg-btn:focus {
   outline: 0;
 }
 html div#msg-whole, body div#msg-whole {
-  height: 50%;
-  width: 80%;
-  border: 2px white dashed;
+  height: 560px;
+  width: 728px;
+  background-image: url(../images/tree.png);
+  background-repeat: no-repeat;
   margin: 0 auto;
   margin-top: 20px;
   overflow: auto;
   padding: 10px;
 }
 html div#msg-whole div.my-msg, body div#msg-whole div.my-msg {
-  border: 2px white solid;
-  line-height: 40px;
-  border-radius: 15px;
-  min-width: 100px;
-  max-width: 50%;
-  display: inline-block;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 20px;
-  position: relative;
+  padding-top: 15px;
+  position: absolute;
+  width: 100px;
+  height: 200px;
   word-wrap: break-word;
-  background: #96ed9e;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 40s;
+  -moz-animation: floatingBalloon 40s;
+  animation: floatingBalloon 40s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  background-image: url(../images/balloon-orange_big.png);
+  background-repeat: no-repeat;
   color: white;
 }
-html div#msg-whole div.my-msg:after, body div#msg-whole div.my-msg:after {
-  content: "";
+html div#msg-whole div.my-msg-tree, body div#msg-whole div.my-msg-tree {
+  padding-top: 15px;
   position: absolute;
-  top: 20px;
-  right: -15px;
-  height: 0;
-  width: 0;
-  border-top: 10px transparent solid;
-  border-right: 0px;
-  border-bottom: 2px transparent solid;
-  border-left: 15px white solid;
-}
-html div#msg-whole div.my-msg span.user-name, body div#msg-whole div.my-msg span.user-name {
-  font-weight: bolder;
-  font-size: 18px;
-  margin-right: 10px;
-}
-html div#msg-whole div.other-msg, body div#msg-whole div.other-msg {
-  border: 2px white solid;
-  line-height: 40px;
-  border-radius: 15px;
-  min-width: 100px;
-  max-width: 50%;
-  display: inline-block;
-  margin: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 20px;
-  position: relative;
+  width: 100px;
+  height: 200px;
   word-wrap: break-word;
-  background: #96d7ed;
-  color: white;
-}
-html div#msg-whole div.other-msg:after, body div#msg-whole div.other-msg:after {
-  content: "";
-  position: absolute;
-  top: 20px;
-  left: -15px;
-  height: 0;
-  width: 0;
-  border-top: 10px transparent solid;
-  border-right: 15px white solid;
-  border-bottom: 2px transparent solid;
-  border-left: 0;
-}
-html div#msg-whole div.other-msg span.user-name, body div#msg-whole div.other-msg span.user-name {
-  font-weight: bolder;
-  font-size: 18px;
-  margin-right: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 20s;
+  -moz-animation: showingBalloon 20s;
+  animation: showingBalloon 20s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-orange.png);
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=index.css.map */

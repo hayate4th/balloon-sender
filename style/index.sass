@@ -1,6 +1,29 @@
 @import "baseDesign"
 @import "vars"
 @import "msgStyle"
+@import "keyFrames"
+@import "animation"
+
+
+@include keyframes-floatingBalloon
+    0%
+        display: block
+        left: 100%
+    100%
+        display: none
+        left: -50%
+
+@include keyframes-showingBalloon
+    0%
+        transform: scale(0, 0)
+    80%
+        transform: scale(0, 0)
+    100%
+        transform: scale(1, 1)
+
+
+html.tree, body.tree
+    background: $bg-send-color
 
 html, body
     margin: 0
@@ -26,50 +49,24 @@ html, body
         position: relative
         top: 0
     div#msg-whole
-        height: 50%
-        width: 80%
-        border: 2px white dashed
+        height: 560px
+        width: 728px
+        background-image: url(../images/tree.png)
+        background-repeat: no-repeat
         margin: 0 auto
         margin-top: 20px
         overflow: auto
         padding: 10px
         div.my-msg
             @include msg-style
-            background: #96ed9e
+            @include animation(floatingBalloon 40s)
+            background-image: url(../images/balloon-orange_big.png)
+            background-repeat: no-repeat
             color: white
-            &:after
-                content: ""
-                position: absolute
-                top: 20px
-                right: -15px
-                height: 0
-                width: 0
-                border-top: 10px transparent solid
-                border-right: 0px
-                border-bottom: 2px transparent solid
-                border-left: 15px white solid
-            span.user-name
-                font-weight: bolder
-                font-size: 18px
-                margin-right: 10px
-            span.message
-        div.other-msg
+        div.my-msg-tree
             @include msg-style
-            background: $bg-color
-            color: white
-            &:after
-                content: ""
-                position: absolute
-                top: 20px
-                left: -15px
-                height: 0
-                width: 0
-                border-top: 10px transparent solid
-                border-right: 15px white solid
-                border-bottom: 2px transparent solid
-                border-left: 0
-            span.user-name
-                font-weight: bolder
-                font-size: 18px
-                margin-right: 10px
-            span.message
+            @include animation(showingBalloon 20s)
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-orange.png)
+            background-repeat: no-repeat
