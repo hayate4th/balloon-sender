@@ -66,6 +66,9 @@ div.wrapper {
   top: 40%;
   height: 300px;
 }
+div.wrapper h2#sent {
+  display: none;
+}
 
 html.tree, body.tree {
   background: #ee7f00;
@@ -77,7 +80,7 @@ html, body {
   padding: 0;
   background: white;
   text-align: center;
-  background: #96d7ed;
+  background: #ccf1ff;
   color: white;
   font-family: "Itim", cursive;
   height: 100%;
@@ -121,52 +124,341 @@ html button#msg-btn:focus, body button#msg-btn:focus {
   outline: 0;
 }
 html div#msg-whole, body div#msg-whole {
-  height: 560px;
-  width: 728px;
+  height: 787px;
+  width: 700px;
   background-image: url(../images/tree.png);
   background-repeat: no-repeat;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 3.8em;
   overflow: auto;
   padding: 10px;
 }
-html div#msg-whole div.my-msg, body div#msg-whole div.my-msg {
+html div#msg-whole div.my-msg-0, body div#msg-whole div.my-msg-0 {
   padding-top: 15px;
   position: absolute;
-  width: 100px;
-  height: 200px;
+  width: 150px;
+  height: 300px;
   word-wrap: break-word;
   font-weight: bold;
   text-align: center;
   font-size: 20px;
-  -webkit-animation: floatingBalloon 40s;
-  -moz-animation: floatingBalloon 40s;
-  animation: floatingBalloon 40s;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-blue_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-0, body div#msg-whole div.my-msg-tree-0 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-blue.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-1, body div#msg-whole div.my-msg-1 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-green_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-1, body div#msg-whole div.my-msg-tree-1 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-green.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-2, body div#msg-whole div.my-msg-2 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-lightblue_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-2, body div#msg-whole div.my-msg-tree-2 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-lightblue.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-3, body div#msg-whole div.my-msg-3 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
   background-image: url(../images/balloon-orange_big.png);
   background-repeat: no-repeat;
   color: white;
 }
-html div#msg-whole div.my-msg-tree, body div#msg-whole div.my-msg-tree {
+html div#msg-whole div.my-msg-tree-3, body div#msg-whole div.my-msg-tree-3 {
   padding-top: 15px;
   position: absolute;
-  width: 100px;
-  height: 200px;
+  width: 150px;
+  height: 300px;
   word-wrap: break-word;
   font-weight: bold;
   text-align: center;
   font-size: 20px;
-  -webkit-animation: showingBalloon 20s;
-  -moz-animation: showingBalloon 20s;
-  animation: showingBalloon 20s;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
   -webkit-animation-fill-mode: both;
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
+  z-index: 1;
   width: 40px;
   height: 80px;
   background-image: url(../images/balloon-orange.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-4, body div#msg-whole div.my-msg-4 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-pink_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-4, body div#msg-whole div.my-msg-tree-4 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-pink.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-5, body div#msg-whole div.my-msg-5 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-purple_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-5, body div#msg-whole div.my-msg-tree-5 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-purple.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-6, body div#msg-whole div.my-msg-6 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-red_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-6, body div#msg-whole div.my-msg-tree-6 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-red.png);
+  background-repeat: no-repeat;
+}
+html div#msg-whole div.my-msg-7, body div#msg-whole div.my-msg-7 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: floatingBalloon 60s;
+  -moz-animation: floatingBalloon 60s;
+  animation: floatingBalloon 60s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 999;
+  background-image: url(../images/balloon-yellow_big.png);
+  background-repeat: no-repeat;
+  color: white;
+}
+html div#msg-whole div.my-msg-tree-7, body div#msg-whole div.my-msg-tree-7 {
+  padding-top: 15px;
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  word-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  font-size: 20px;
+  -webkit-animation: showingBalloon 30s;
+  -moz-animation: showingBalloon 30s;
+  animation: showingBalloon 30s;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+  z-index: 1;
+  width: 40px;
+  height: 80px;
+  background-image: url(../images/balloon-yellow.png);
   background-repeat: no-repeat;
 }
 

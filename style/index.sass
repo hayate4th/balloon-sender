@@ -25,6 +25,8 @@ div.wrapper
     position: relative
     top: 40%
     height: 300px
+    h2#sent
+        display: none
 
 html.tree, body.tree
     background: $bg-send-color
@@ -55,24 +57,131 @@ html, body
         position: relative
         top: 0
     div#msg-whole
-        height: 560px
-        width: 728px
+        height: 787px
+        width: 700px
         background-image: url(../images/tree.png)
         background-repeat: no-repeat
         margin: 0 auto
-        margin-top: 20px
+        margin-top: 3.8em
         overflow: auto
         padding: 10px
-        div.my-msg
+        div.my-msg-0
             @include msg-style
-            @include animation(floatingBalloon 40s)
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-blue_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-0
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-blue.png)
+            background-repeat: no-repeat
+        div.my-msg-1
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-green_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-1
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-green.png)
+            background-repeat: no-repeat
+        div.my-msg-2
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-lightblue_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-2
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-lightblue.png)
+            background-repeat: no-repeat
+        div.my-msg-3
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
             background-image: url(../images/balloon-orange_big.png)
             background-repeat: no-repeat
             color: white
-        div.my-msg-tree
+        div.my-msg-tree-3
             @include msg-style
-            @include animation(showingBalloon 20s)
+            @include animation(showingBalloon 30s)
+            z-index: 1
             width: 40px
             height: 80px
             background-image: url(../images/balloon-orange.png)
+            background-repeat: no-repeat
+        div.my-msg-4
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-pink_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-4
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-pink.png)
+            background-repeat: no-repeat
+        div.my-msg-5
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-purple_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-5
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-purple.png)
+            background-repeat: no-repeat
+        div.my-msg-6
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-red_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-6
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-red.png)
+            background-repeat: no-repeat
+        div.my-msg-7
+            @include msg-style
+            @include animation(floatingBalloon 60s)
+            z-index: 999
+            background-image: url(../images/balloon-yellow_big.png)
+            background-repeat: no-repeat
+            color: white
+        div.my-msg-tree-7
+            @include msg-style
+            @include animation(showingBalloon 30s)
+            z-index: 1
+            width: 40px
+            height: 80px
+            background-image: url(../images/balloon-yellow.png)
             background-repeat: no-repeat

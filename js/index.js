@@ -10,7 +10,9 @@ var sendMessage = function(){
     {
         message: msg
     })
-    $('input#msg-input').val('')
+    $('input#msg-input').remove()
+    $('button#msg-btn').remove()
+    $('h2#sent').show()
 }
 
 var addMessage = function(msg){
@@ -19,10 +21,15 @@ var addMessage = function(msg){
 }
 
 var makeMessage = function(msg){
-    if (msg.length > 0) {
-        console.log(msg)
-        rnd_top = 25 - Math.floor( Math.random () * 25);
-        rnd_left = 80 - Math.floor( Math.random () * 60);
-        return "<div style='text-align: right'><div class='my-msg' style='top: " + rnd_top.toString() + "%'><span class='message'>" + msg + "</span></div><div class='my-msg-tree' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div></div></br>"
+    if (msg.length > 0 && msg !== 'undefined') {
+        if (msg.length > 30) {
+            msg = msg.substr(0, 30)
+        }
+        rnd_top = Math.floor( Math.random () * 60) + 5;
+        left_start = rnd_top * -0.41 + 52
+        left_max = rnd_top * 0.25 + 53.75 - left_start
+        rnd_left = Math.floor( Math.random () * left_max) + left_start;
+        rnd_color = Math.floor( Math.random () * 7)
+        return "<div style='text-align: right'><div class='my-msg-" + rnd_color + "' style='top: " + rnd_top.toString() + "%'><span class='message'>" + msg + "</span></div><div class='my-msg-tree-" + rnd_color + "' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div></div></br>"
     }
 }
