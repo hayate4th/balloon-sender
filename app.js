@@ -10,6 +10,7 @@ let admins = {
     'admin': { password: 'Kb893veM' }
 };
 
+
 filter = new Filter()
 
 app.use(express.static(__dirname))
@@ -26,9 +27,9 @@ app.get('/', (req, res)=> {
     res.sendFile(__dirname + '/views/index.html');
 });
 
-// app.get('/send', (req, res)=> {
-//     res.sendFile(__dirname + '/views/send.html');
-// });
+app.get('/send', (req, res)=> {
+    res.sendFile(__dirname + '/views/send.html');
+});
 
 io.sockets.on('connection', (socket)=>{
     socket.on('message', (data)=>{
