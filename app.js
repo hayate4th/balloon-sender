@@ -27,9 +27,9 @@ app.get('/', (req, res)=> {
     res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/send', (req, res)=> {
-    res.sendFile(__dirname + '/views/send.html');
-});
+// app.get('/send', (req, res)=> {
+//     res.sendFile(__dirname + '/views/send.html');
+// });
 
 io.sockets.on('connection', (socket)=>{
     socket.on('message', (data)=>{
