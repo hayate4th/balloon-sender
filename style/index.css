@@ -203,7 +203,7 @@ html div#msg-whole div.my-msg-1, body div#msg-whole div.my-msg-1 {
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
   z-index: 999;
-  background-image: url(../images/balloon-green_big.png);
+  background-image: url(../images/balloon-orange_big.png);
   background-repeat: no-repeat;
   color: white;
 }
@@ -227,7 +227,7 @@ html div#msg-whole div.my-msg-tree-1, body div#msg-whole div.my-msg-tree-1 {
   z-index: 1;
   width: 40px;
   height: 80px;
-  background-image: url(../images/balloon-green.png);
+  background-image: url(../images/balloon-orange.png);
   background-repeat: no-repeat;
 }
 html div#msg-whole div.my-msg-2, body div#msg-whole div.my-msg-2 {
@@ -248,7 +248,7 @@ html div#msg-whole div.my-msg-2, body div#msg-whole div.my-msg-2 {
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
   z-index: 999;
-  background-image: url(../images/balloon-orange_big.png);
+  background-image: url(../images/balloon-pink_big.png);
   background-repeat: no-repeat;
   color: white;
 }
@@ -272,7 +272,7 @@ html div#msg-whole div.my-msg-tree-2, body div#msg-whole div.my-msg-tree-2 {
   z-index: 1;
   width: 40px;
   height: 80px;
-  background-image: url(../images/balloon-orange.png);
+  background-image: url(../images/balloon-pink.png);
   background-repeat: no-repeat;
 }
 html div#msg-whole div.my-msg-3, body div#msg-whole div.my-msg-3 {
@@ -293,7 +293,7 @@ html div#msg-whole div.my-msg-3, body div#msg-whole div.my-msg-3 {
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
   z-index: 999;
-  background-image: url(../images/balloon-pink_big.png);
+  background-image: url(../images/balloon-purple_big.png);
   background-repeat: no-repeat;
   color: white;
 }
@@ -317,7 +317,7 @@ html div#msg-whole div.my-msg-tree-3, body div#msg-whole div.my-msg-tree-3 {
   z-index: 1;
   width: 40px;
   height: 80px;
-  background-image: url(../images/balloon-pink.png);
+  background-image: url(../images/balloon-purple.png);
   background-repeat: no-repeat;
 }
 html div#msg-whole div.my-msg-4, body div#msg-whole div.my-msg-4 {
@@ -338,7 +338,7 @@ html div#msg-whole div.my-msg-4, body div#msg-whole div.my-msg-4 {
   -moz-animation-fill-mode: both;
   animation-fill-mode: both;
   z-index: 999;
-  background-image: url(../images/balloon-purple_big.png);
+  background-image: url(../images/balloon-red_big.png);
   background-repeat: no-repeat;
   color: white;
 }
@@ -362,55 +362,10 @@ html div#msg-whole div.my-msg-tree-4, body div#msg-whole div.my-msg-tree-4 {
   z-index: 1;
   width: 40px;
   height: 80px;
-  background-image: url(../images/balloon-purple.png);
-  background-repeat: no-repeat;
-}
-html div#msg-whole div.my-msg-5, body div#msg-whole div.my-msg-5 {
-  padding-top: 25px;
-  position: absolute;
-  width: 150px;
-  height: 300px;
-  word-wrap: break-word;
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
-  color: white;
-  text-shadow: 0 0 2px #000;
-  -webkit-animation: floatingBalloon 60s;
-  -moz-animation: floatingBalloon 60s;
-  animation: floatingBalloon 60s;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
-  z-index: 999;
-  background-image: url(../images/balloon-red_big.png);
-  background-repeat: no-repeat;
-  color: white;
-}
-html div#msg-whole div.my-msg-tree-5, body div#msg-whole div.my-msg-tree-5 {
-  padding-top: 25px;
-  position: absolute;
-  width: 150px;
-  height: 300px;
-  word-wrap: break-word;
-  font-weight: bold;
-  text-align: center;
-  font-size: 18px;
-  color: white;
-  text-shadow: 0 0 2px #000;
-  -webkit-animation: showingBalloon 35s;
-  -moz-animation: showingBalloon 35s;
-  animation: showingBalloon 35s;
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
-  z-index: 1;
-  width: 40px;
-  height: 80px;
   background-image: url(../images/balloon-red.png);
   background-repeat: no-repeat;
 }
-html div#msg-whole div.my-msg-6, body div#msg-whole div.my-msg-6 {
+html div#msg-whole div.my-msg-5, body div#msg-whole div.my-msg-5 {
   padding-top: 25px;
   position: absolute;
   width: 150px;
@@ -432,7 +387,7 @@ html div#msg-whole div.my-msg-6, body div#msg-whole div.my-msg-6 {
   background-repeat: no-repeat;
   color: white;
 }
-html div#msg-whole div.my-msg-tree-6, body div#msg-whole div.my-msg-tree-6 {
+html div#msg-whole div.my-msg-tree-5, body div#msg-whole div.my-msg-tree-5 {
   padding-top: 25px;
   position: absolute;
   width: 150px;

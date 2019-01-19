@@ -61,10 +61,12 @@ var makeMessage = function(msg){
         left_start = rnd_top * -0.41 + 52
         left_max = rnd_top * 0.25 + 53.75 - left_start
         rnd_left = Math.floor( Math.random () * left_max) + left_start;
-        rnd_color = Math.floor( Math.random () * 7)
-        html_tree_txt = "<div class='my-msg-tree-" + rnd_color + "' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div>"
-        html_tree_no_txt = "<div class='my-msg-tree-" + rnd_color + " no-animation' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div>"
-        html_txt  = "<div style='text-align: right'><div class='my-msg-" + rnd_color + "' style='top: " + rnd_top.toString() + "%'><span class='message'>" + msg + "</span></div>" + html_tree_txt + "</div></br>"
+        rnd_color = Math.floor( Math.random () * 6)
+        html_tree_txt = "<div class='my-msg-tree-" + rnd_color.toString() + "' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div>"
+        html_tree_no_txt = "<div class='my-msg-tree-" + rnd_color.toString() + " no-animation' style='top: " + rnd_top.toString() + "%; left: " + rnd_left.toString() + "%'></div>"
+        html_txt  = "<div style='text-align: right'><div class='my-msg-" + rnd_color.toString() + "' style='top: " + rnd_top.toString() + "%'><span class='message'>" + msg + "</span></div>" + html_tree_txt + "</div></br>"
+        console.log(html_tree_txt)
+        console.log(html_tree_no_txt)
         html_cache += html_tree_no_txt
         localStorage.setItem('bal_cnt', bal_cnt)
         localStorage.setItem('html_cache', html_cache)
