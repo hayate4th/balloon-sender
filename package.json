@@ -4,7 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server --mode development --open --devtool cheap-module-source-map",
+    "build": "webpack --mode production",
+    "lint-fix": "eslint --ext .ts,tsx src types --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --ext .ts,tsx"
+    ]
   },
   "repository": {
     "type": "git",
