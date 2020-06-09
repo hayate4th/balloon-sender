@@ -8,7 +8,7 @@ const MainPage: React.FC = () => {
   return (
     <FlexWrapper>
       <TreeImg src={tree} />
-      <BalloonCounter />
+      <BalloonCounter count={123} />
     </FlexWrapper>
   );
 };
