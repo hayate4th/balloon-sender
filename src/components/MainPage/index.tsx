@@ -15,6 +15,7 @@ const MainPage: React.FC = () => {
 
 const FlexWrapper = styled.div`
   display: flex;
+  font-family: "Itim", cursive;
   justify-content: center;
   background-color: #ccf1ff;
   width: 100vw;
