@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styled from "styled-components";
 
 import MainPage from "./components/MainPage";
+import SendPage from "./components/SendPage";
 
 const App: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const App: React.FC = () => {
           <MainPage />
         </Route>
         <Route path="/send">
-          <div>This is the sending page!</div>
+          <SendPage />
         </Route>
       </Switch>
     </Router>
