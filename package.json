@@ -31,19 +31,21 @@
   },
   "homepage": "https://github.com/hayate4th/balloon-sender#readme",
   "dependencies": {
+    "animejs": "3.2.0",
     "express": "4.17.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-router-dom": "5.2.0",
     "socket.io": "2.3.0",
+    "socket.io-client": "2.3.0",
     "styled-components": "5.1.1",
     "webpack": "4.43.0"
   },
   "devDependencies": {
     "@cybozu/eslint-config": "10.0.4",
+    "@types/animejs": "3.1.1",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
-    "@types/react-router-dom": "5.1.5",
+    "@types/socket.io-client": "1.4.33",
     "@types/styled-components": "5.1.0",
     "eslint": "7.2.0",
     "husky": "4.2.5",
