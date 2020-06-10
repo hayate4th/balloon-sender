@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import BalloonCounter from "../BalloonCounter";
 import tree from "../../assets/images/tree.png";
+import balloonRed from "../../assets/images/balloon-red.png";
 
 const ENDPOINT = "http://127.0.0.1:4001";
 
@@ -36,7 +37,11 @@ const MainPage: React.FC = () => {
 
   return (
     <FlexWrapper>
-      {response !== "" && <div>{response}</div>}
+      {response !== "" && (
+        <MessageItem>
+          <MessageText>{response}</MessageText>
+        </MessageItem>
+      )}
       <TreeImg src={tree} />
       <BalloonCounter count={123} />
       <SenderWrapper>
@@ -61,6 +66,29 @@ const FlexWrapper = styled.div`
   background-color: #ccf1ff;
   width: 100vw;
   height: 100vh;
+`;
+
+const MessageItem = styled.div`
+  position: absolute;
+  background-image: url(${balloonRed});
+  background-repeat: no-repeat;
+  background-position: center 0;
+  color: white;
+  padding-top: 80px;
+  width: 140px;
+  max-height: 150px;
+`;
+
+const MessageText = styled.div`
+  color: white;
+  background-color: #ee7f00;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  word-break: break-all;
+  overflow: hidden;
+  max-height: 150px;
 `;
 
 const TreeImg = styled.img`
