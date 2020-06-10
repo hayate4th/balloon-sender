@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import styled from "styled-components";
+import anime from "animejs";
 
 import BalloonCounter from "../BalloonCounter";
 import tree from "../../assets/images/tree.png";
@@ -17,6 +18,24 @@ const MainPage: React.FC = () => {
   const [inputText, setInputText] = useState("");
 
   const socket = socketIOClient(ENDPOINT);
+
+  useEffect(() => {
+    anime
+      .timeline()
+      .add({
+        targets: ".animation-balloon",
+        translateX: ["50vw", "0vw"],
+        easing: "linear",
+        duration: 5000,
+      })
+      .add({
+        targets: ".animation-textBox",
+        translateY: ["0vh", "100vh"],
+        easing: (el: HTMLElement, i: number, total: number) => (t: number) =>
+          0.5 * 9.8 * t * t,
+        duration: 2000,
+      });
+  }, [response]);
 
   useEffect(() => {
     socket.on("message", (data: SocketData) => {
@@ -38,8 +57,8 @@ const MainPage: React.FC = () => {
   return (
     <FlexWrapper>
       {response !== "" && (
-        <MessageItem>
-          <MessageText>{response}</MessageText>
+        <MessageItem className="animation-balloon">
+          <MessageText className="animation-textBox">{response}</MessageText>
         </MessageItem>
       )}
       <TreeImg src={tree} />
