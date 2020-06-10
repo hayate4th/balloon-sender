@@ -64,8 +64,9 @@ const FlexWrapper = styled.div`
 `;
 
 const TreeImg = styled.img`
-  height: 100%;
+  height: calc(100% - 50px);
   width: auto;
+  padding-top: 50px;
 `;
 
 const SenderWrapper = styled.div`
