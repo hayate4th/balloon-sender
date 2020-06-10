@@ -40,11 +40,11 @@ const MainPage: React.FC = () => {
       <TreeImg src={tree} />
       <BalloonCounter count={123} />
       <SenderWrapper>
-        <SenderTitle>Write Something Here</SenderTitle>
+        <SenderTitle>Send Your Message</SenderTitle>
         <MessageInput
           type="text"
           name="message-input"
-          placeholder="Input Here"
+          placeholder="Write Here"
           onChange={handleInputChange}
           value={inputText}
         />
