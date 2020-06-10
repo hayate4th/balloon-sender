@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import socketIOClient from "socket.io-client";
 import styled from "styled-components";
 
+const ENDPOINT = "http://127.0.0.1:4001";
+
 const SendPage: React.FC = () => {
+  const [inputText, setInputText] = useState("");
+
+  const socket = socketIOClient(ENDPOINT);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(event.target.value);
+  };
+
+  const handleSendClick = () => {
+    socket.emit("message", {
+      message: inputText,
+    });
+    setInputText("");
+  };
+
   return (
     <FlexWrapper>
       <SenderTitle>Write Something Here</SenderTitle>
-      <MessageInput type="text" name="message-input" placeholder="Input Here" />
-      <SendButton>Send</SendButton>
+      <MessageInput
+        type="text"
+        name="message-input"
+        placeholder="Input Here"
+        onChange={handleInputChange}
+        value={inputText}
+      />
+      <SendButton onClick={handleSendClick}>Send</SendButton>
     </FlexWrapper>
   );
 };
