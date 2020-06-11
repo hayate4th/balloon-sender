@@ -29,7 +29,9 @@ const BalloonSender: React.FC<Props> = ({ socket }) => {
         onChange={handleInputChange}
         value={inputText}
       />
-      <SendButton onClick={handleSendClick}>Send</SendButton>
+      <SendButton onClick={handleSendClick} disabled={inputText === ""}>
+        Send
+      </SendButton>
     </SenderWrapper>
   );
 };
