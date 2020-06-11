@@ -6,6 +6,7 @@ import anime from "animejs";
 import BalloonCounter from "../BalloonCounter";
 import tree from "../../assets/images/tree.png";
 import balloonRed from "../../assets/images/balloon-red.png";
+import BalloonSender from "../BalloonSender";
 
 const ENDPOINT = "http://127.0.0.1:4001";
 
@@ -15,7 +16,6 @@ type SocketData = {
 
 const MainPage: React.FC = () => {
   const [response, setResponse] = useState("");
-  const [inputText, setInputText] = useState("");
 
   const socket = socketIOClient(ENDPOINT);
 
@@ -43,17 +43,6 @@ const MainPage: React.FC = () => {
     });
   }, [socket]);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(event.target.value);
-  };
-
-  const handleSendClick = () => {
-    socket.emit("message", {
-      message: inputText,
-    });
-    setInputText("");
-  };
-
   return (
     <FlexWrapper>
       {response !== "" && (
@@ -63,17 +52,7 @@ const MainPage: React.FC = () => {
       )}
       <TreeImg src={tree} />
       <BalloonCounter count={123} />
-      <SenderWrapper>
-        <SenderTitle>Send Your Message</SenderTitle>
-        <MessageInput
-          type="text"
-          name="message-input"
-          placeholder="Write Here"
-          onChange={handleInputChange}
-          value={inputText}
-        />
-        <SendButton onClick={handleSendClick}>Send</SendButton>
-      </SenderWrapper>
+      <BalloonSender socket={socket} />
     </FlexWrapper>
   );
 };
@@ -114,56 +93,6 @@ const TreeImg = styled.img`
   height: calc(100% - 50px);
   width: auto;
   padding-top: 50px;
-`;
-
-const SenderWrapper = styled.div`
-  position: absolute;
-  right: 5%;
-  bottom: 5%;
-  border-radius: 5px;
-  background-color: #ee7f00;
-  padding: 10px;
-`;
-
-const SenderTitle = styled.h2`
-  color: white;
-  font-size: 25px;
-  margin: 0;
-  margin-bottom: 20px;
-  text-align: center;
-`;
-
-const MessageInput = styled.input`
-  border: 0px;
-  border-bottom: 2px solid white;
-  background: none;
-  color: white;
-  font-size: 25px;
-  font-family: "Itim", cursive;
-  outline: none;
-  max-width: 500px;
-  margin-right: 10px;
-
-  &::placeholder {
-    color: white;
-    opacity: 0.7;
-  }
-`;
-
-const SendButton = styled.button`
-  outline: none;
-  font-size: 25px;
-  font-family: "Itim", cursive;
-  padding: 5px;
-  color: white;
-  border: 2px solid white;
-  border-radius: 3px;
-  background-color: transparent;
-
-  &:active {
-    color: #ee7f00;
-    background-color: white;
-  }
 `;
 
 export default MainPage;
