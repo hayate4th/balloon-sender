@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import anime from "animejs";
 
-import balloonRed from "../../assets/images/balloon-red.png";
+import { chooseRandomBalloonColor } from "../../utils/BalloonItemUtil";
 
 type Props = {
   index: number;
-  response: string;
+  response: {
+    colorIndex: number;
+    message: string;
+  };
 };
 
 const BalloonItem: React.FC<Props> = ({ index, response }) => {
@@ -29,15 +32,23 @@ const BalloonItem: React.FC<Props> = ({ index, response }) => {
   }, [index, response]);
 
   return (
-    <MessageItem className={`animation-balloon-${index}`}>
-      <MessageText className="animation-textBox">{response}</MessageText>
+    <MessageItem
+      className={`animation-balloon-${index}`}
+      style={{
+        backgroundImage: `url(${chooseRandomBalloonColor(
+          response.colorIndex
+        )})`,
+      }}
+    >
+      <MessageText className="animation-textBox">
+        {response.message}
+      </MessageText>
     </MessageItem>
   );
 };
 
 const MessageItem = styled.div`
   position: absolute;
-  background-image: url(${balloonRed});
   background-repeat: no-repeat;
   background-position: center 0;
   color: white;

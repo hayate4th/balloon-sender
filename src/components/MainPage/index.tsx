@@ -15,7 +15,12 @@ type SocketData = {
 };
 
 const MainPage: React.FC = () => {
-  const [messages, setMessages] = useImmer<string[]>([]);
+  const [messages, setMessages] = useImmer<
+    Array<{
+      colorIndex: number;
+      message: string;
+    }>
+  >([]);
   const [count, setCount] = useImmer(0);
 
   const socket = socketIOClient(ENDPOINT);
@@ -23,7 +28,10 @@ const MainPage: React.FC = () => {
   useEffect(() => {
     socket.on("message", (data: SocketData) => {
       setMessages((draft) => {
-        draft.push(data.message);
+        draft.push({
+          colorIndex: Math.floor(Math.random() * 7),
+          message: data.message,
+        });
       });
       setCount((draft) => draft + 1);
     });
