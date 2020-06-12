@@ -11,8 +11,19 @@ server.listen(port);
 
 socketIo.sockets.on("connection", socket => {
   socket.on("message", data => {
+    const colorIndex = Math.floor(Math.random() * 7)
+    const startY = Math.floor(Math.random() * 61);
+    const endY = Math.floor(Math.random() * 61);
+    const a = 0.12;
+    const endX =
+      Math.floor(Math.random() * 2 * Math.sqrt(endY / a)) -
+      Math.floor(Math.sqrt(endY / a));
     socketIo.sockets.emit("message", {
-      message: data.message
+      colorIndex,
+      message: data.message,
+      startY,
+      endY,
+      endX
     })
   })
 })

@@ -1,57 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import socketIOClient from "socket.io-client";
 import styled from "styled-components";
-import anime from "animejs";
+import { useImmer } from "use-immer";
 
 import BalloonCounter from "../BalloonCounter";
 import tree from "../../assets/images/tree.png";
-import balloonRed from "../../assets/images/balloon-red.png";
 import BalloonSender from "../BalloonSender";
+import BalloonItem from "../BalloonItem";
 
 const ENDPOINT = "http://127.0.0.1:4001";
 
 type SocketData = {
+  colorIndex: number;
   message: string;
+  startY: number;
+  endY: number;
+  endX: number;
 };
 
 const MainPage: React.FC = () => {
-  const [response, setResponse] = useState("");
+  const [messages, setMessages] = useImmer<
+    Array<{
+      colorIndex: number;
+      message: string;
+      startY: number;
+      endY: number;
+      endX: number;
+    }>
+  >([]);
+  const [count, setCount] = useImmer(0);
 
   const socket = socketIOClient(ENDPOINT);
 
   useEffect(() => {
-    anime
-      .timeline()
-      .add({
-        targets: ".animation-balloon",
-        translateX: ["50vw", "0vw"],
-        easing: "linear",
-        duration: 5000,
-      })
-      .add({
-        targets: ".animation-textBox",
-        translateY: ["0vh", "100vh"],
-        easing: (el: HTMLElement, i: number, total: number) => (t: number) =>
-          0.5 * 9.8 * t * t,
-        duration: 2000,
-      });
-  }, [response]);
-
-  useEffect(() => {
     socket.on("message", (data: SocketData) => {
-      setResponse(data.message);
+      setMessages((draft) => {
+        draft.push({
+          colorIndex: data.colorIndex,
+          message: data.message,
+          startY: data.startY,
+          endY: data.endY,
+          endX: data.endX,
+        });
+      });
+      setCount((draft) => draft + 1);
     });
-  }, [socket]);
+    // FIXME: try not to use this
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <FlexWrapper>
-      {response !== "" && (
-        <MessageItem className="animation-balloon">
-          <MessageText className="animation-textBox">{response}</MessageText>
-        </MessageItem>
-      )}
+      {messages.map((message, index) => (
+        <BalloonItem key={index} index={index} response={message} />
+      ))}
       <TreeImg src={tree} />
-      <BalloonCounter count={123} />
+      <BalloonCounter count={count} />
       <BalloonSender socket={socket} />
     </FlexWrapper>
   );
@@ -64,29 +68,6 @@ const FlexWrapper = styled.div`
   background-color: #ccf1ff;
   width: 100vw;
   height: 100vh;
-`;
-
-const MessageItem = styled.div`
-  position: absolute;
-  background-image: url(${balloonRed});
-  background-repeat: no-repeat;
-  background-position: center 0;
-  color: white;
-  padding-top: 80px;
-  width: 140px;
-  max-height: 150px;
-`;
-
-const MessageText = styled.div`
-  color: white;
-  background-color: #ee7f00;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  word-break: break-all;
-  overflow: hidden;
-  max-height: 150px;
 `;
 
 const TreeImg = styled.img`
