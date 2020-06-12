@@ -11,7 +11,11 @@ import BalloonItem from "../BalloonItem";
 const ENDPOINT = "http://127.0.0.1:4001";
 
 type SocketData = {
+  colorIndex: number;
   message: string;
+  startY: number;
+  endY: number;
+  endX: number;
 };
 
 const MainPage: React.FC = () => {
@@ -19,6 +23,9 @@ const MainPage: React.FC = () => {
     Array<{
       colorIndex: number;
       message: string;
+      startY: number;
+      endY: number;
+      endX: number;
     }>
   >([]);
   const [count, setCount] = useImmer(0);
@@ -29,8 +36,11 @@ const MainPage: React.FC = () => {
     socket.on("message", (data: SocketData) => {
       setMessages((draft) => {
         draft.push({
-          colorIndex: Math.floor(Math.random() * 7),
+          colorIndex: data.colorIndex,
           message: data.message,
+          startY: data.startY,
+          endY: data.endY,
+          endX: data.endX,
         });
       });
       setCount((draft) => draft + 1);

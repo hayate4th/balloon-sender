@@ -9,16 +9,21 @@ type Props = {
   response: {
     colorIndex: number;
     message: string;
+    startY: number;
+    endY: number;
+    endX: number;
   };
 };
 
 const BalloonItem: React.FC<Props> = ({ index, response }) => {
   useEffect(() => {
+    const { startY, endY, endX } = response;
     anime
       .timeline()
       .add({
         targets: `.animation-balloon-${index}`,
-        translateX: ["50vw", "0vw"],
+        translateX: ["50vw", `${endX}vw`],
+        translateY: [`${startY}vh`, `${endY}vh`],
         easing: "linear",
         duration: 5000,
       })
