@@ -32,7 +32,7 @@ const Wrapper = styled.div`
 `;
 
 const CounterTitle = styled.h2`
-  font: 15px "Itim", cursive;
+  font: 1rem "Itim", cursive;
   margin: 0 0 10px 0;
   text-align: center;
 `;
@@ -52,8 +52,10 @@ const Counter = styled.div`
 const Digit = styled.div`
   background-color: #ee7f00;
   color: #fff;
-  font: 25px "Itim", cursive;
-  padding: 5px 10px 5px 10px;
+  font: 1.5rem "Itim", cursive;
+  padding: 5px;
+  text-align: center;
+  width: 25px;
 `;
 
 export default BalloonCounter;

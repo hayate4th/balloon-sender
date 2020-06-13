@@ -55,7 +55,6 @@ const BalloonItem: React.FC<Props> = ({ index, response }) => {
 const MessageItem = styled.div`
   background: no-repeat center 0;
   color: #fff;
-  max-height: 150px;
   position: absolute;
   padding: 80px 0 0 0;
   width: 140px;
@@ -65,11 +64,11 @@ const MessageText = styled.div`
   background-color: #ee7f00;
   border-radius: 5px;
   color: #fff;
-  font: 18px "Itim", cursive;
+  font: 1.2rem "Itim", cursive;
   max-height: 150px;
   overflow: hidden;
   padding: 5px;
-  word-break: break-all;
+  word-break: break-word;
 `;
 
 export default BalloonItem;

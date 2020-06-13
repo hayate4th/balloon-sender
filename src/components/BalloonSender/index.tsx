@@ -47,7 +47,7 @@ const SenderWrapper = styled.div`
 
 const SenderTitle = styled.h2`
   color: #fff;
-  font: 25px "Itim", cursive;
+  font: 1.5rem "Itim", cursive;
   margin: 0 0 20px 0;
   text-align: center;
 `;
@@ -57,7 +57,7 @@ const MessageInput = styled.input`
   border: 0;
   border-bottom: 2px solid #fff;
   color: #fff;
-  font: 25px "Itim", cursive;
+  font: 1.5rem "Itim", cursive;
   margin: 0 10px 0 0;
   max-width: 500px;
   outline: none;
@@ -73,13 +73,19 @@ const SendButton = styled.button`
   border: 2px solid #fff;
   border-radius: 3px;
   color: #fff;
-  font: 25px "Itim", cursive;
+  cursor: pointer;
+  font: 1.5rem "Itim", cursive;
   outline: none;
   padding: 5px;
 
   &:active {
     color: #ee7f00;
     background-color: white;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 `;
 
