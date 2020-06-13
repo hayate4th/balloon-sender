@@ -66,13 +66,11 @@ const FlexWrapper = styled.div`
   display: flex;
   height: 100vh;
   justify-content: center;
-  width: 100vw;
 `;
 
 const TreeImg = styled.img`
-  height: calc(100% - 50px);
+  height: calc(100% - 50px); // padding-top 50px
   padding: 50px 0 0 0;
-  width: auto;
 `;
 
 export default MainPage;

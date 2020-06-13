@@ -41,10 +41,10 @@ const Counter = styled.div`
   display: flex;
 
   div {
-    margin-right: 10px;
+    margin: 0 10px 0 0;
 
     &:last-of-type {
-      margin-right: 0;
+      margin: 0;
     }
   }
 `;
@@ -53,7 +53,7 @@ const Digit = styled.div`
   background-color: #ee7f00;
   color: #fff;
   font: 25px "Itim", cursive;
-  padding: 5px 10px;
+  padding: 5px 10px 5px 10px;
 `;
 
 export default BalloonCounter;
