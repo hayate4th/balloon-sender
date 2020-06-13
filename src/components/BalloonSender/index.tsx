@@ -37,48 +37,45 @@ const BalloonSender: React.FC<Props> = ({ socket }) => {
 };
 
 const SenderWrapper = styled.div`
+  background-color: #ee7f00;
+  border-radius: 5px;
+  bottom: 5%;
+  padding: 10px;
   position: absolute;
   right: 5%;
-  bottom: 5%;
-  border-radius: 5px;
-  background-color: #ee7f00;
-  padding: 10px;
 `;
 
 const SenderTitle = styled.h2`
-  color: white;
-  font-size: 25px;
-  margin: 0;
-  margin-bottom: 20px;
+  color: #fff;
+  font: 25px "Itim", cursive;
+  margin: 0 0 20px 0;
   text-align: center;
 `;
 
 const MessageInput = styled.input`
-  border: 0px;
-  border-bottom: 2px solid white;
   background: none;
-  color: white;
-  font-size: 25px;
-  font-family: "Itim", cursive;
-  outline: none;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font: 25px "Itim", cursive;
+  margin: 0 10px 0 0;
   max-width: 500px;
-  margin-right: 10px;
+  outline: none;
 
   &::placeholder {
-    color: white;
+    color: #fff;
     opacity: 0.7;
   }
 `;
 
 const SendButton = styled.button`
-  outline: none;
-  font-size: 25px;
-  font-family: "Itim", cursive;
-  padding: 5px;
-  color: white;
-  border: 2px solid white;
-  border-radius: 3px;
   background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  color: #fff;
+  font: 25px "Itim", cursive;
+  outline: none;
+  padding: 5px;
 
   &:active {
     color: #ee7f00;
