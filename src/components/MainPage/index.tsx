@@ -62,18 +62,15 @@ const MainPage: React.FC = () => {
 };
 
 const FlexWrapper = styled.div`
-  display: flex;
-  font-family: "Itim", cursive;
-  justify-content: center;
   background-color: #ccf1ff;
-  width: 100vw;
+  display: flex;
   height: 100vh;
+  justify-content: center;
 `;
 
 const TreeImg = styled.img`
-  height: calc(100% - 50px);
-  width: auto;
-  padding-top: 50px;
+  height: calc(100% - 50px); // padding-top 50px
+  padding: 50px 0 0 0;
 `;
 
 export default MainPage;

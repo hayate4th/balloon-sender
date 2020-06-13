@@ -53,25 +53,22 @@ const BalloonItem: React.FC<Props> = ({ index, response }) => {
 };
 
 const MessageItem = styled.div`
+  background: no-repeat center 0;
+  color: #fff;
   position: absolute;
-  background-repeat: no-repeat;
-  background-position: center 0;
-  color: white;
-  padding-top: 80px;
+  padding: 80px 0 0 0;
   width: 140px;
-  max-height: 150px;
 `;
 
 const MessageText = styled.div`
-  color: white;
   background-color: #ee7f00;
   border-radius: 5px;
-  padding: 5px;
-  font-size: 18px;
-  font-weight: bold;
-  word-break: break-all;
-  overflow: hidden;
+  color: #fff;
+  font: 1.2rem "Itim", cursive;
   max-height: 150px;
+  overflow: hidden;
+  padding: 5px;
+  word-break: break-word;
 `;
 
 export default BalloonItem;
