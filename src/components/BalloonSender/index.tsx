@@ -19,6 +19,16 @@ const BalloonSender: React.FC<Props> = ({ socket }) => {
     setInputText("");
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const { key } = event;
+    if (key === "Enter" && inputText !== "") {
+      socket.emit("message", {
+        message: inputText,
+      });
+      setInputText("");
+    }
+  };
+
   return (
     <SenderWrapper>
       <SenderTitle>Send Your Message</SenderTitle>
@@ -27,6 +37,7 @@ const BalloonSender: React.FC<Props> = ({ socket }) => {
         name="message-input"
         placeholder="Write Here"
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
         value={inputText}
       />
       <SendButton onClick={handleSendClick} disabled={inputText === ""}>
