@@ -15,19 +15,12 @@ type SocketData = {
   message: string;
   startY: number;
   endY: number;
+  startX: -50 | 50;
   endX: number;
 };
 
 const MainPage: React.FC = () => {
-  const [messages, setMessages] = useImmer<
-    Array<{
-      colorIndex: number;
-      message: string;
-      startY: number;
-      endY: number;
-      endX: number;
-    }>
-  >([]);
+  const [messages, setMessages] = useImmer<SocketData[]>([]);
   const [count, setCount] = useImmer(0);
 
   const socket = socketIOClient(ENDPOINT);
@@ -40,6 +33,7 @@ const MainPage: React.FC = () => {
           message: data.message,
           startY: data.startY,
           endY: data.endY,
+          startX: data.startX,
           endX: data.endX,
         });
       });

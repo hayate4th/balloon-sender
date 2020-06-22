@@ -15,6 +15,7 @@ socketIo.sockets.on("connection", socket => {
     const startY = Math.floor(Math.random() * 61);
     const endY = Math.floor(Math.random() * 61);
     const a = 0.12;
+    const startX = [-50, 50][Math.floor(Math.random() * 2)];
     const endX =
       Math.floor(Math.random() * 2 * Math.sqrt(endY / a)) -
       Math.floor(Math.sqrt(endY / a));
@@ -23,7 +24,8 @@ socketIo.sockets.on("connection", socket => {
       message: data.message,
       startY,
       endY,
+      startX, 
       endX
-    })
+    });
   })
 })
