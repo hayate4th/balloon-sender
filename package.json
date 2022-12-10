@@ -32,7 +32,7 @@
   "homepage": "https://github.com/hayate4th/balloon-sender#readme",
   "dependencies": {
     "animejs": "3.2.0",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "immer": "7.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
